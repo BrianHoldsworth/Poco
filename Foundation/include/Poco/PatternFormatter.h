@@ -88,6 +88,7 @@ class Foundation_API PatternFormatter: public Formatter
 	///   * %i - message date/time millisecond (000 .. 999)
 	///   * %c - message date/time centisecond (0 .. 9)
 	///   * %F - message date/time fractional seconds/microseconds (000000 - 999999)
+	///   * %G - message date/time from epoch in milliseconds (64-bit value)
 	///   * %z - time zone differential in ISO 8601 format (Z or +NN.NN).
 	///   * %Z - time zone differential in RFC format (GMT or +NNNN)
 	///   * %[name] - the value of the message parameter with the given name

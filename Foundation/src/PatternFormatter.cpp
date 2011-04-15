@@ -69,7 +69,6 @@ PatternFormatter::~PatternFormatter()
 {
 }
 
-
 void PatternFormatter::format(const Message& msg, std::string& text)
 {
 	Timestamp timestamp = msg.getTime();
@@ -107,6 +106,8 @@ void PatternFormatter::format(const Message& msg, std::string& text)
 				case 'd': NumberFormatter::append0(text, dateTime.day(), 2); break;
 				case 'e': NumberFormatter::append(text, dateTime.day()); break;
 				case 'f': NumberFormatter::append(text, dateTime.day(), 2); break;
+ 				// add support for '%G', which is epoch time in milliseconds
+ 				case 'G': NumberFormatter::append(text, (Int64)dateTime.timestamp().epochTime()*1000); break;
 				case 'm': NumberFormatter::append0(text, dateTime.month(), 2); break;
 				case 'n': NumberFormatter::append(text, dateTime.month()); break;
 				case 'o': NumberFormatter::append(text, dateTime.month(), 2); break;
